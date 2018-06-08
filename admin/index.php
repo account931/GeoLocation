@@ -3,7 +3,7 @@ session_start();
  
  //checking password
  if(isset($_POST['pass1'])){
-   if($_POST['login1']=='11' && $_POST['pass1']=='11') {
+   if($_POST['login1']=='11***' && $_POST['pass1']=='11****') {
 	   $_SESSION['auth226691'] = true;
 	   //echo 'true';
 	   $loggedURL = $_SERVER['DOCUMENT_ROOT'];//$_SERVER['DOCUMENT_ROOT'] ; //. "/admin/index.php";
