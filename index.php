@@ -23,9 +23,11 @@
     <div id="map"></div>
     <script>
 	
+	
 	//window.lat = 'Z';
 	//window.lon = 'y';
 	//window.pos;
+	window.addressX;
 	
 	
       // Note: This example requires that you consent to location sharing when
@@ -39,15 +41,13 @@
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
+		
+		
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-			
-			
-			
-          navigator.geolocation.getCurrentPosition(function(position) {
-		
-			
+					
+          navigator.geolocation.getCurrentPosition(function(position) {	
 			
               var pos = {
               lat: position.coords.latitude,
@@ -56,21 +56,28 @@
 			
            
 			
-			  // Mine
+			  // Mine------------------------------------------------
 			  
 			lat = position.coords.latitude;
 			lon = position.coords.longitude;
 			//
-			  alert("Inside -> " + lat);
+			  //alert("Inside -> " + lat);
 			//alert(position.coords.latitude + " " + position.coords.longitude );
 			
 			//run ajax to get Address from lat, lon , UNDER CONSTRACTION
-			//ajaxGetAddressbyCoords();
+			//if lan if found, i.e match digitals, run this function to get address
+			if( !isNaN(lat) ){ //if number
+				alert('coord found');
+			    ajaxGetAddressbyCoords(); // temp disabled
+				//alert ("Address Main " + window.addressX);
+			} else { 
+				window.addressX = 'address tracking failed due to API KEY';
+			}
 			
 			//sends ajax request to ajax_php_script/record_data.php to record ip, date, lat, lon using RecordTxt::RecordAnyInput(array( "lat: " .$_POST['cityLat'], "lon: ".$_POST['cityLon'], $gmapLink  ),  '../recordText/geolocation.txt');
 			myAjaxRequest();
 			
-			// End mine
+			// End mine-------------------------------------------------
 			
 			
             infoWindow.setPosition(pos);
@@ -84,6 +91,8 @@
 		  
         } else {
           // Browser doesn't support Geolocation
+		  lat = 'lat not detected'; // to recodt txt if lat not found
+		  lon = 'lon not detected';
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
@@ -91,7 +100,7 @@
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
+                              'Error: The Geolocation service failed. \n Engage permission on device \n ' :
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
@@ -99,6 +108,7 @@
 	  
 	  
 	  //mine-------------------------
+	  
 	  
 	  //sends ajax request to ajax_php_script/record_data.php to record ip, date, lat, lon using RecordTxt::RecordAnyInput(array( "lat: " .$_POST['cityLat'], "lon: ".$_POST['cityLon'], $gmapLink  ),  '../recordText/geolocation.txt');
 	  function myAjaxRequest() 
@@ -113,6 +123,7 @@
             data: { 
 			    cityLat:lat,
 				cityLon:lon,
+				address: window.addressX,
 				//cityLon:window.lon,
 				
 			},
@@ -134,8 +145,9 @@
 	  
 	  
 	  
-	  
+	  // gets an address by lat, lon
 	  //----------------------------------------------------------
+	 
 	  function ajaxGetAddressbyCoords(){
 		  var geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon;
 		  $.ajax({
@@ -146,20 +158,34 @@
             data: { 
 			
 			},
+			async: false, // the core Error was here, it was sync and did not wait for value to return
             success: function(data) {
-				alert(JSON.stringify(data, null, 4));
-              // alert (data.results.address_components[0].long_name);
+				alert("ajaxGetAddressbyCoords status is " + data.status);
+				if (data.status=="OK"){
+				    //alert(JSON.stringify(data, null, 4));
+                    //alert (data.results[1].formatted_address);
+				    window.addressX = data.results[1].formatted_address; //get the JSON address
+					alert('success ' + addressX);
+				} else {
+					window.addressX = "not defined in ajaxGetAddressbyCoords"; 
+					alert('not defined in ajaxGetAddressbyCoords');
+				}
+				
+				
+				
             },  //end success
 			error: function (error) {
-				
+				alert('ajaxError');
             }	
+			
         });
-		  
+		//alert("return " + window.addressX);
+		 return window.addressX; 
 	  }
 	  // end ajaxGetAddressbyCoords()----------------------------------------
 	  
 	  
-	  
+	 
     </script>
 	
 	

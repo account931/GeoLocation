@@ -6,3 +6,186 @@ lat: 50.262649599999996
 lon: 28.6618259
 <a target= '_blank' href ='https://www.google.com/maps/@50.262649599999996,28.6618259,20z'>https://www.google.com/maps/@50.262649599999996,28.6618259,20z</a>
 
+
+ 
+-----------------------
+07.06.18.16:29 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626029
+lon: 28.6618502
+<a target= '_blank' href ='https://www.google.com/maps/@50.2626029,28.6618502,20z'>https://www.google.com/maps/@50.2626029,28.6618502,20z</a>
+ 
+-----------------------
+08.06.18.10:07 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262631199999994
+lon: 28.661875000000002
+<a target= '_blank' href ='https://www.google.com/maps/@50.262631199999994,28.661875000000002,20z'>https://www.google.com/maps/@50.262631199999994,28.661875000000002,20z</a>
+ 
+-----------------------
+08.06.18.10:07 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.26263050000001
+lon: 28.6618771
+<a target= '_blank' href ='https://www.google.com/maps/@50.26263050000001,28.6618771,20z'>https://www.google.com/maps/@50.26263050000001,28.6618771,20z</a>
+ 
+-----------------------
+08.06.18.10:09 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626444
+lon: 28.661838799999998
+<a target= '_blank' href ='https://www.google.com/maps/@50.2626444,28.661838799999998,20z'>https://www.google.com/maps/@50.2626444,28.661838799999998,20z</a>
+ 
+-----------------------
+08.06.18.10:31 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262660499999996
+lon: 28.6618224
+<a target= '_blank' href ='https://www.google.com/maps/@50.262660499999996,28.6618224,20z'>https://www.google.com/maps/search/?api=1&query=50.262660499999996,28.6618224</a>
+ 
+-----------------------
+08.06.18.10:34 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262644699999996
+lon: 28.661858100000003
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262644699999996,28.661858100000003 '>https://www.google.com/maps/search/?api=1&query=50.262644699999996,28.661858100000003</a>
+ 
+-----------------------
+08.06.18.10:45 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626387
+lon: 28.661831
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626387,28.661831 '>https://www.google.com/maps/search/?api=1&query=50.2626387,28.661831</a>
+ 
+-----------------------
+08.06.18.10:45 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626646
+lon: 28.661847099999996
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626646,28.661847099999996 '>https://www.google.com/maps/search/?api=1&query=50.2626646,28.661847099999996</a>
+ 
+-----------------------
+08.06.18.10:47 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262522399999995
+lon: 28.6616842
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262522399999995,28.6616842 '>https://www.google.com/maps/search/?api=1&query=50.262522399999995,28.6616842</a>
+ 
+-----------------------
+08.06.18.10:49 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262648
+lon: 28.6618588
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262648,28.6618588 '>https://www.google.com/maps/search/?api=1&query=50.262648,28.6618588</a>
+ 
+-----------------------
+08.06.18.10:54 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626669
+lon: 28.661843899999994
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626669,28.661843899999994 '>https://www.google.com/maps/search/?api=1&query=50.2626669,28.661843899999994</a>
+address: 
+ 
+-----------------------
+08.06.18.10:57 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262634999999996
+lon: 28.661835600000003
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262634999999996,28.661835600000003 '>https://www.google.com/maps/search/?api=1&query=50.262634999999996,28.661835600000003</a>
+address: 
+ 
+-----------------------
+08.06.18.11:02 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626539
+lon: 28.6618541
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626539,28.6618541 '>https://www.google.com/maps/search/?api=1&query=50.2626539,28.6618541</a>
+address: 
+ 
+-----------------------
+08.06.18.11:04 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626469
+lon: 28.6618662
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626469,28.6618662 '>https://www.google.com/maps/search/?api=1&query=50.2626469,28.6618662</a>
+address: 
+ 
+-----------------------
+08.06.18.11:06 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626432
+lon: 28.661849399999998
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626432,28.661849399999998 '>https://www.google.com/maps/search/?api=1&query=50.2626432,28.661849399999998</a>
+address: 
+ 
+-----------------------
+08.06.18.11:12 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626492
+lon: 28.661850100000002
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626492,28.661850100000002 '>https://www.google.com/maps/search/?api=1&query=50.2626492,28.661850100000002</a>
+address: 
+ 
+-----------------------
+08.06.18.11:17 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626372
+lon: 28.6618843
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626372,28.6618843 '>https://www.google.com/maps/search/?api=1&query=50.2626372,28.6618843</a>
+address: 
+ 
+-----------------------
+08.06.18.11:22 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262623299999994
+lon: 28.661808599999997
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262623299999994,28.661808599999997 '>https://www.google.com/maps/search/?api=1&query=50.262623299999994,28.661808599999997</a>
+address: 
+ 
+-----------------------
+08.06.18.11:23 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626412
+lon: 28.661868799999993
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626412,28.661868799999993 '>https://www.google.com/maps/search/?api=1&query=50.2626412,28.661868799999993</a>
+address: 
+ 
+-----------------------
+08.06.18.11:26 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626433
+lon: 28.661889199999994
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626433,28.661889199999994 '>https://www.google.com/maps/search/?api=1&query=50.2626433,28.661889199999994</a>
+address: 
+ 
+-----------------------
+08.06.18.11:32 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262618599999996
+lon: 28.661834100000004
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262618599999996,28.661834100000004 '>https://www.google.com/maps/search/?api=1&query=50.262618599999996,28.661834100000004</a>
+address: Житомир, Житомирська область, Україна, 10000
+ 
+-----------------------
+08.06.18.11:34 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.262652499999994
+lon: 28.661846299999993
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262652499999994,28.661846299999993 '>https://www.google.com/maps/search/?api=1&query=50.262652499999994,28.661846299999993</a>
+address: Житомир, Житомирська область, Україна, 10000
+ 
+-----------------------
+08.06.18.11:34 - 127.0.0.1
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36
+lat: 50.2626584
+lon: 28.661843899999994
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626584,28.661843899999994 '>https://www.google.com/maps/search/?api=1&query=50.2626584,28.661843899999994</a>
+address: Житомир, Житомирська область, Україна, 10000
+ 
+-----------------------
+08.06.18.12:01 - 127.0.0.1
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36
+lat: 50.2626176
+lon: 28.661865
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626176,28.661865 '>https://www.google.com/maps/search/?api=1&query=50.2626176,28.661865</a>
+address: Житомир, Житомирська область, Україна, 10000
