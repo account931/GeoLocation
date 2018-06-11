@@ -125,7 +125,7 @@
             data: { 
 			    cityLat:lat,
 				cityLon:lon,
-				address: window.addressX,
+				address: "<span style='color:red;'>" + window.addressX + "</span>",
 				//cityLon:window.lon,
 				
 			},

@@ -42,8 +42,8 @@ class RecordTxt {
         //new add, adds  in the beginning, no need to use reverse------------------	---------------
 	   //$file = file_get_contents($filename);
 	
-        $content = "\n \n \n \n \n --------------------------------------------------\n \n Date: " . $date . "  -  IP: " . $ip . "\n" ; // adds the existed content to the end
-	    $content = $content . "<br><span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>"; //start of hidden content
+        $content = "\n \n \n \n \n --------------------------------------------------\n \n \n " . $date . "  -  IP: " . $ip . "\n" ; // adds the existed content to the end
+	    $content = $content . "\n<span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>"; //start of hidden content
 		
 	    foreach ($idArray  as $itemSubj) {
             //echo $itemSubj."</br>";

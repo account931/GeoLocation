@@ -6,9 +6,9 @@ session_start();
    if($_POST['login1']=='11' && $_POST['pass1']=='11') {
 	   $_SESSION['auth226691'] = true;
 	   //echo 'true';
-	   //$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
+	   /$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
 	   $loggedURL = $_SERVER['DOCUMENT_ROOT'];//$_SERVER['DOCUMENT_ROOT'] ; //. "/admin/index.php";
-	   header ("Location: $loggedURL");
+	   header ("L/ocation: $loggedURL");
 	   header("Refresh:0");
     } else { 
 	    echo '<p style="color:red;">Failed</p>';
@@ -47,6 +47,9 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="ajaxscript.js"></script><!--AJAX script-->
 
+  <!--bootstrap-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 
   <script> //click on arrow  down to  see  hissen info (UserAgent, address)  info  //&#9660
