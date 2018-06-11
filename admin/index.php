@@ -3,10 +3,10 @@ session_start();
  
  //checking password
  if(isset($_POST['pass1'])){
-   if($_POST['login1']=='11' && $_POST['pass1']=='11') {
+   if($_POST['login1']=='****' && $_POST['pass1']=='***') {
 	   $_SESSION['auth226691'] = true;
 	   //echo 'true';
-	   /$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
+	   /$loggedURL = 'http://waze.zzz.com.ua/geolocation/*****/index.php';
 	   $loggedURL = $_SERVER['DOCUMENT_ROOT'];//$_SERVER['DOCUMENT_ROOT'] ; //. "/admin/index.php";
 	   header ("L/ocation: $loggedURL");
 	   header("Refresh:0");
@@ -20,7 +20,7 @@ session_start();
     session_destroy();
 	unset($_SESSION['auth226691']); 
 	unset($_GET['logout']);
-	//$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
+	//$loggedURL = 'http://waze.zzz.com.ua/geolocation/***/index.php';
 	$loggedURL = $_SERVER['DOCUMENT_ROOT'] . 'admin/index.php?go=true';
 	
 	header ("Location: $loggedURL"); //$_SERVER['DOCUMENT_ROOT']
