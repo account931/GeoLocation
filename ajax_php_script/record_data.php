@@ -10,10 +10,11 @@
 	  $address = 'https://www.google.com/maps/search/?api=1&query=' . $_POST['cityLat'] . ',' . $_POST['cityLon'];  //link to gmaps with a marker 
 	  //constructs <a href> with gmaps URL
 	  $gmapLink = "<a target= '_blank' href =' " . $address . " '>" .$address ."</a>";
+	  $latLon = "lat: " . $_POST['cityLat'] . ", lon: " . $_POST['cityLon'];
 	  
 	  
 	  //records lat, lon, gmaps link
-      RecordTxt::RecordAnyInput(array( "lat: " .$_POST['cityLat'],   "lon: ".$_POST['cityLon'],   $gmapLink, "address: " . $_POST['address']  ),    '../recordText/geolocation.txt');// Record  to  text;
+      RecordTxt::RecordAnyInput(array( $latLon,   $gmapLink, "address: " . $_POST['address']  ),    '../recordText/geolocation.txt');// Record  to  text, $_POST['address'] comes from ajax;
 	  
       //End  Record;
 

@@ -100,9 +100,11 @@
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed. \n Engage permission on device \n ' :
-                              'Error: Your browser doesn\'t support geolocation.');
+                              'Error: The Geolocation service failed. <br> Engage permission on device.<br> Or use Google Chrome below v.50 <br> Best regards. ' :
+                              'Error: Your browser <br> doesn\'t support geolocation.');
         infoWindow.open(map);
+		
+		
       }
 	  
 	  
@@ -167,7 +169,7 @@
 				    window.addressX = data.results[1].formatted_address; //get the JSON address
 					alert('success ' + addressX);
 				} else {
-					window.addressX = "not defined in ajaxGetAddressbyCoords"; 
+					window.addressX = "API Query Limit, n/a(ajaxGetAddressbyCoords)"; 
 					alert('not defined in ajaxGetAddressbyCoords');
 				}
 				

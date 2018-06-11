@@ -3,9 +3,10 @@ session_start();
  
  //checking password
  if(isset($_POST['pass1'])){
-   if($_POST['login1']=='11***' && $_POST['pass1']=='11****') {
+   if($_POST['login1']=='11' && $_POST['pass1']=='11') {
 	   $_SESSION['auth226691'] = true;
 	   //echo 'true';
+	   //$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
 	   $loggedURL = $_SERVER['DOCUMENT_ROOT'];//$_SERVER['DOCUMENT_ROOT'] ; //. "/admin/index.php";
 	   header ("Location: $loggedURL");
 	   header("Refresh:0");
@@ -19,6 +20,7 @@ session_start();
     session_destroy();
 	unset($_SESSION['auth226691']); 
 	unset($_GET['logout']);
+	//$loggedURL = 'http://waze.zzz.com.ua/geolocation/admin/index.php';
 	$loggedURL = $_SERVER['DOCUMENT_ROOT'] . 'admin/index.php?go=true';
 	
 	header ("Location: $loggedURL"); //$_SERVER['DOCUMENT_ROOT']
@@ -47,9 +49,11 @@ session_start();
 
 
 
-  <script> //click on arrow  down to  see  UserAgent  info  //&#9660
+  <script> //click on arrow  down to  see  hissen info (UserAgent, address)  info  //&#9660
       $(document).ready(function(){  
-          $(".imgClick").click(function(){         
+	      //Mega error was here, ajax click part did not JS worked, should have used for new generated click
+	      $(document).on("click", '.imgClick', function() {   // this  click  is  used  to   react  to  newly generated cicles;
+          //$(".imgClick").click(function(){         
               $(this).next("p").toggle(300); //open  and closes
               // shifting tiangles  with HTML Entity http://www.fileformat.info/info/unicode/char/25b2/index.htm
               if($(this).text()=="\u25BC"){
@@ -58,6 +62,7 @@ session_start();
 				$(this).html("\u25BC");
 			}
          });
+		 
       });
   </script>
 
@@ -116,7 +121,7 @@ session_start();
         //echo file_get_contents( "ipTrack.txt" ); // get the contents in REVERSE , and echo it out
         //doing  reverse-temporary  disabled,trying  to  ressigned  to AJAX
         $file = file("../recordText/geolocation.txt");
-        $file = array_reverse($file);
+        //$file = array_reverse($file);
         foreach ($file as $f){
             echo $f."<br>";
 		}
@@ -127,6 +132,11 @@ session_start();
         }*/
        // END below  works  but  not  making reverse  list-----------
        ?>
+	   
+	   
+	   
+	   
+	   
 	   
     <!--  for  ajax  htmling-->
     <!-----------------  Logic  of  ajaxing   is located   in  scriptajax.js , USES  REVERSED ARRAY!!!!!----------> 

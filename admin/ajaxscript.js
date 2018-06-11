@@ -8,8 +8,11 @@
 
 
 
+ 
 
 
+
+  
 
 
 //AJAX  requesting- WORKSSSS
@@ -42,11 +45,17 @@ window.onload = function() {
     //li.innerHTML = date + ': ' + responseText;
     //ul.appendChild(li);
 //mine
-      var  div =document.getElementById("displayDiv");  
+      //var  div =document.getElementById("displayDiv");  
 //start   splitting  MINE
-responseText = responseText.split("\n").reverse().join("</br>");     //responseText=responseText.split("").reverse().join("");
+//responseText = responseText.split("\n").reverse().join("</br>");     //responseText=responseText.split("").reverse().join("");
+//alert(responseText);
 // END   splitting  MINE
-       div.innerHTML=responseText;
+       //div.innerHTML=responseText;
+	   
+	   //Mega Fix- Ajax dispay new line part was corrupted as does not read '\n', we replaced it with <br>, we could have used <br> at once, but in Classes/recordText.php, but the file itself was unreadable, all in one line
+	   //ajax Click part did not JS worked, should have used for new generated click
+	   responseTextX = responseText.replace(/[\n\r]/g, "<br>");
+	   $('#displayDiv').html(responseTextX);
   }
  
   readTextfile();
@@ -100,3 +109,8 @@ setInterval(function()
 // **                                                                                  **
 // **************************************************************************************
 // **************************************************************************************
+
+
+
+
+
