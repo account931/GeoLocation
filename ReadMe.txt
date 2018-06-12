@@ -12,8 +12,20 @@ How  works Variant 1,(index.php, a new version, that works without SSL certifica
 recenterMap(latX,lonX) puts found coords to Object pos, pass it to {infoWindow.setPosition(pos)} to change GM coordinates to found,
  then runs {ajaxGetAddressbyCoords(myLat, myLon) to get ajaxed address by coordinates} and then runs {myAjaxRequest(myLat, myLon) to ajax record lat, lon, address to txt}
 1.2. OnLoad , by default {function initMap()} loads GM with default coordinates, using src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-1.3 If {tryGeolocation()} fails it runs {browserGeolocationFail()}, that finds the eeor and if it is {error.message.indexOf("Only secure origins are allowed")},
- runs {tryAPIGeolocation()}, which use different methods to get coords, if {tryAPIGeolocation()} success it runs {recenterMap(latX,lonX)} as well.
+1.3 If {tryGeolocation()} fails it runs {browserGeolocationFail()}, that finds the error and if it is {error.message.indexOf("Only secure origins are allowed")},
+ runs {tryAPIGeolocation()}, which use different methods to get coords, if {tryAPIGeolocation()} success it runs {recenterMap(latX,lonX,'ssl_string')} as well.
+
+1.4 function {recenterMap(latX,lonX, ssl)-> ajaxGetAddressbyCoords(myLat1, myLon1, ssl_status)}, excepts 3 arg, {ssl_status} is used to detect if it was called in {tryAPIGeolocation}, i.e when was rejected by Chrome due to no SSL.
+In this case, address is not accurate, and this string is added to address, to show that result is approximate.
+If request is not rejected due to no SSL, {tryGeolocation()-> browserGeolocationSuccess()-> recenterMap(latX,lonX, null)-> ajaxGetAddressbyCoords(myLat, myLon, null) + myAjaxRequest(x, y)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 

@@ -220,7 +220,7 @@
           apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
 		  recenterMap(success.location.lat, success.location.lng , 'SSL Fail');//mine, recenter the map if coords are found, 
 		                                                                       //SslStatus arg appears if Chrome rejects because of No SSL and fired in {tryAPIGeolocation}
-		  alert("Chrome SSL reject");
+		  //alert("Chrome SSL reject");
           })
           .fail(function(err) {
               alert("API Geolocation error! \n\n"+err);
@@ -230,7 +230,7 @@
       var browserGeolocationSuccess = function(position) {
 		  latX =  position.coords.latitude; //mine
 		  lonX =  position.coords.longitude;
-          alert("Browser GL success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
+          alert("Core Performance successful!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
 		  recenterMap(latX,lonX, null);//mine, recenter the map if coords are found
       };
 
@@ -242,7 +242,7 @@
               case error.PERMISSION_DENIED:
                   if(error.message.indexOf("Only secure origins are allowed") == 0) {
                       tryAPIGeolocation();
-					  alert('SSL permission is denied');
+					  alert('!SSL permission denied');
 					  infoWindow.setContent("Only secure origins are allowed");
                   }
                   break;
@@ -317,7 +317,7 @@
 				alert('coord found ' + myLat);
 				if (SslStatus){
 					b = SslStatus;
-					alert( b+ ' Reject detected');
+					//alert( b + ' Reject detected');
 					ajaxGetAddressbyCoords(myLat, myLon, SslStatus); //SslStatus arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}
 				} else {
 			        ajaxGetAddressbyCoords(myLat, myLon, null); // arguements should be as in recenterMap(myLat, myLon) arg, null as we set no SslStatus(no reject by Google)
@@ -396,8 +396,8 @@
 				if (data.status=="OK"){
 				    //alert(JSON.stringify(data, null, 4));
                     //alert (data.results[1].formatted_address);
-					if ( ssl_status){
-						addressX = ssl_status + ": " + data.results[1].formatted_address;
+					if (ssl_status){ //if 3rd arg is not null
+						addressX = "<b><< " +ssl_status + " >> </b> : " + data.results[1].formatted_address;
 					} else {
 				        addressX = data.results[1].formatted_address; //get the JSON address
 					}
