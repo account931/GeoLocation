@@ -213,11 +213,14 @@
 	  var apiGeolocationSuccess = function(position) {
           alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
       };
-
+      
+	  //runs if Rejected by Chrome as no SSL
       var tryAPIGeolocation = function() {
           jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
           apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
-		  recenterMap(success.location.lat, success.location.lng);//mine, recenter the map if coords are found
+		  recenterMap(success.location.lat, success.location.lng , 'SSL Fail');//mine, recenter the map if coords are found, 
+		                                                                       //SslStatus arg appears if Chrome rejects because of No SSL and fired in {tryAPIGeolocation}
+		  alert("Chrome SSL reject");
           })
           .fail(function(err) {
               alert("API Geolocation error! \n\n"+err);
@@ -228,7 +231,7 @@
 		  latX =  position.coords.latitude; //mine
 		  lonX =  position.coords.longitude;
           alert("Browser GL success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
-		  recenterMap(latX,lonX);//mine, recenter the map if coords are found
+		  recenterMap(latX,lonX, null);//mine, recenter the map if coords are found
       };
 
       var browserGeolocationFail = function(error) {
@@ -239,7 +242,7 @@
               case error.PERMISSION_DENIED:
                   if(error.message.indexOf("Only secure origins are allowed") == 0) {
                       tryAPIGeolocation();
-					  alert('permission denied');
+					  alert('SSL permission is denied');
 					  infoWindow.setContent("Only secure origins are allowed");
                   }
                   break;
@@ -297,7 +300,7 @@
    
    
       //mine function in case of success, recenter map to found coords
-	  function recenterMap(myLat, myLon){
+	  function recenterMap(myLat, myLon, SslStatus){  //SslStatus arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}, otherwise call with null
 		  //alert(latX);
 		    var pos = { //adding coords to object
               lat: myLat,
@@ -312,7 +315,13 @@
 			//if lan if found, i.e match digitals, run this function to get address
 			if (!isNaN(myLat) ){ //if number
 				alert('coord found ' + myLat);
-			    ajaxGetAddressbyCoords(myLat, myLon); // arguements should be as recenterMap(myLat, myLon) arg
+				if (SslStatus){
+					b = SslStatus;
+					alert( b+ ' Reject detected');
+					ajaxGetAddressbyCoords(myLat, myLon, SslStatus); //SslStatus arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}
+				} else {
+			        ajaxGetAddressbyCoords(myLat, myLon, null); // arguements should be as in recenterMap(myLat, myLon) arg, null as we set no SslStatus(no reject by Google)
+				}
 				//alert ("Address Main " + window.addressX);
 			} else { 
 				 addressX = 'address tracking failed due to API KEY';
@@ -335,8 +344,8 @@
 	  //sends ajax request to ajax_php_script/record_data.php to record ip, date, lat, lon using RecordTxt::RecordAnyInput(array( "lat: " .$_POST['cityLat'], "lon: ".$_POST['cityLon'], $gmapLink  ),  '../recordText/geolocation.txt');
 	  function myAjaxRequest(x, y) 
 	  {	 
-	     alert('addr' + addressX);
-	     alert("myAjaxRequest " + x );
+	     //alert('addr' + addressX);
+	     //alert("myAjaxRequest " + x );
         // send  data  to  PHP handler  ************ 
         $.ajax({
             url: 'ajax_php_script/record_data.php',
@@ -371,7 +380,7 @@
 	  // gets an address by lat, lon
 	  //----------------------------------------------------------
 	 
-	  function ajaxGetAddressbyCoords(myLat1, myLon1){
+	  function ajaxGetAddressbyCoords(myLat1, myLon1, ssl_status){  //ssl_status arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}
 		  var geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + myLat1 + ',' + myLon1;
 		  $.ajax({
             url: geocodeURL,
@@ -387,7 +396,11 @@
 				if (data.status=="OK"){
 				    //alert(JSON.stringify(data, null, 4));
                     //alert (data.results[1].formatted_address);
-				    addressX = data.results[1].formatted_address; //get the JSON address
+					if ( ssl_status){
+						addressX = ssl_status + ": " + data.results[1].formatted_address;
+					} else {
+				        addressX = data.results[1].formatted_address; //get the JSON address
+					}
 					alert('success ' + addressX);
 				} else {
 					addressX = "API Query Limit, n/a(ajaxGetAddressbyCoords)"; 
