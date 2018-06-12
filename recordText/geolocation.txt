@@ -1,1 +1,94 @@
 
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+ 
+ 12.06.18.14:11  -  IP: 127.0.0.1
+
+<span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.2627246, lon: 28.6619082
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2627246,28.6619082 '>https://www.google.com/maps/search/?api=1&query=50.2627246,28.6619082</a>
+address: <span style='color:red;'>Богунський район, Житомир, Житомирська область, Україна, 10000</span>
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+ 
+ 12.06.18.14:07  -  IP: 127.0.0.1
+
+<span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.2626694, lon: 28.6618697
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626694,28.6618697 '>https://www.google.com/maps/search/?api=1&query=50.2626694,28.6618697</a>
+address: <span style='color:red;'>Богунський район, Житомир, Житомирська область, Україна, 10000</span>
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Mobile Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+ <span class='glyphicon glyphicon-signal'>
+ <span class='glyphicon glyphicon-transfer'>
+ 11.06.18.16:35  -  IP: 127.0.0.1
+<br><span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.2626325, lon: 28.6618307
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626325,28.6618307 '>https://www.google.com/maps/search/?api=1&query=50.2626325,28.6618307</a>
+address: <span style='color:red;'>Богунський район, Житомир, Житомирська область, Україна, 10000</span>
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+ Date: 11.06.18.16:30  -  IP: 127.0.0.1
+<br><span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.2626249, lon: 28.661842299999996
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.2626249,28.661842299999996 '>https://www.google.com/maps/search/?api=1&query=50.2626249,28.661842299999996</a>
+address: <span style='color:red;'>Богунський район, Житомир, Житомирська область, Україна, 10000</span>
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+11.06.18.16:07 - 127.0.0.1
+<br><span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.262637999999995, lon: 28.661849800000002
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262637999999995,28.661849800000002 '>https://www.google.com/maps/search/?api=1&query=50.262637999999995,28.661849800000002</a>
+address: Богунський район, Житомир, Житомирська область, Україна, 10000
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ --------------------------------------------------
+ 
+11.06.18.16:07 - 127.0.0.1
+<br><span class='imgClick'>&#9660;</span> <p class='info' style='display:none;'>lat: 50.262637999999995, lon: 28.661849800000002
+<a target= '_blank' href =' https://www.google.com/maps/search/?api=1&query=50.262637999999995,28.661849800000002 '>https://www.google.com/maps/search/?api=1&query=50.262637999999995,28.661849800000002</a>
+address: Богунський район, Житомир, Житомирська область, Україна, 10000
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36</p>
+ --------------------------------------------------
+ 
+ 
+ 

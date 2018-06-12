@@ -1,5 +1,23 @@
 GeoLocation
-How it works:
+It includes 2 version {index.php, index_prev.php}, admin/index.php is  a restricted view of recorded txt.
+1.index.php - it is a new version, that works without SSL certificate, code was taken from StackOverflow + mixed with my version2 (getting  address by coordinates, record text)
+2.index_prev.php includes prev version, which worked on SSL only, code was taken from official google map documentation
+
+
+
+//-----------------------------------------------------------------------------
+
+How  works Variant 1,(index.php, a new version, that works without SSL certificate, code was taken from StackOverflow + mixed with my version2 (getting  address by coordinates, record text) ):
+1.1 Consists of 2 parts, the 1st taken from StackOverflow, it runs function {tryGeolocation()}, if it success - run function {browserGeolocationSuccess()}, which contains function recenterMap(latX,lonX);
+recenterMap(latX,lonX) puts found coords to Object pos, pass it to {infoWindow.setPosition(pos)} to change GM coordinates to found,
+ then runs {ajaxGetAddressbyCoords(myLat, myLon) to get ajaxed address by coordinates} and then runs {myAjaxRequest(myLat, myLon) to ajax record lat, lon, address to txt}
+1.2. OnLoad , by default {function initMap()} loads GM with default coordinates, using src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+1.3 If {tryGeolocation()} fails it runs {browserGeolocationFail()}, that finds the eeor and if it is {error.message.indexOf("Only secure origins are allowed")},
+ runs {tryAPIGeolocation()}, which use different methods to get coords, if {tryAPIGeolocation()} success it runs {recenterMap(latX,lonX)} as well.
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+How  works Variant 2,(index_prev.php, that Includes prev version, which worked on SSL only, code was taken from official google map documentation):
 
 1.1 geolocation/index.php is a landing page to trace user.
    It draws a Gmap with user position using GM API.In general user coordinates can be obtained without GM API with JS Navigator object only:
