@@ -209,7 +209,10 @@
       //                                                                                     **
 	  var latX;
 	  var lonX;
+	  
+	  var map, infoWindow;
 	 
+	  //if tryAPIGeolocation success
 	  var apiGeolocationSuccess = function(position) {
           alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
       };
@@ -227,6 +230,10 @@
           });
       };
 
+	  
+	  
+	  
+	  //if tryGeolocation() success
       var browserGeolocationSuccess = function(position) {
 		  latX =  position.coords.latitude; //mine
 		  lonX =  position.coords.longitude;
@@ -234,7 +241,13 @@
 		  recenterMap(latX,lonX, null);//mine, recenter the map if coords are found
       };
 
+	  
+	  
+	  
+	  //if tryGeolocation() fails
       var browserGeolocationFail = function(error) {
+		  alert('GPS is OFF');  // will fire if GPS is off at cell or if Chrome
+		  
           switch (error.code) {
               case error.TIMEOUT:
                   alert("Browser GL error !\n\nTimeout.");
@@ -243,7 +256,9 @@
                   if(error.message.indexOf("Only secure origins are allowed") == 0) {
                       tryAPIGeolocation();
 					  alert('!SSL permission denied');
-					  infoWindow.setContent("Only secure origins are allowed");
+					  //infoWindow.setContent("Only secure origins are allowed");
+					  //infoWindow.open(map);
+                      
                   }
                   break;
               case error.POSITION_UNAVAILABLE:
@@ -262,7 +277,8 @@
                   browserGeolocationSuccess,
                   browserGeolocationFail,
                   {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true}); //maximumAge: 50000 (50 sec of location cache)
-         }
+         }		 
+		 
       };
 
       tryGeolocation();
@@ -278,7 +294,7 @@
 	   
 	   //addon from 1st variant
 	   // function which loads Google maps with specified  coords, using src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-	    var map, infoWindow;
+	    /*var*/ map, infoWindow; // made infoWindow global to be seen in function {receneter()}
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
@@ -306,6 +322,7 @@
               lat: myLat,
               lng: myLon
             };
+			//infoWindow = new google.maps.InfoWindow; // Mega fix
 		    infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
@@ -439,6 +456,3 @@
 	
   </body>
 </html>
-
-
-
