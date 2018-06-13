@@ -246,7 +246,7 @@
 	  
 	  //if tryGeolocation() fails
       var browserGeolocationFail = function(error) {
-		  alert('GPS is OFF');  // will fire if GPS is off at cell or if Chrome
+		  alert('GPS or Location permission is OFF. Turn it on.');  // will fire if GPS is off at cell, if no permission or if Chrome
 		  
           switch (error.code) {
               case error.TIMEOUT:
