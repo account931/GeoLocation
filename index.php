@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="css/myGeolocation.css">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -20,7 +21,8 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="map"></div><!-- holds the maps-->
+	<div id="infoBox"><span class="close-span">x</span></div><!-- display the status of running, shows info-->
     <script>
 	
 	
@@ -214,7 +216,8 @@
 	 
 	  //if tryAPIGeolocation success
 	  var apiGeolocationSuccess = function(position) {
-          alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
+          //alert("API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude); //IMPORTANT ALERT
+		  displayStatus("#infoBox", "API geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude, "null");
       };
       
 	  //runs if Rejected by Chrome as no SSL
@@ -226,7 +229,8 @@
 		  //alert("Chrome SSL reject");
           })
           .fail(function(err) {
-              alert("API Geolocation error! \n\n"+err);
+              //alert("API Geolocation error! \n\n"+err);
+			  displayStatus("#infoBox", "API Geolocation error! \n\n"+err, "red");
           });
       };
 
@@ -237,7 +241,8 @@
       var browserGeolocationSuccess = function(position) {
 		  latX =  position.coords.latitude; //mine
 		  lonX =  position.coords.longitude;
-          alert("Core Performance successful!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
+          //alert("Core Performance successful!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude); //IMPORTANT ALERT
+		  displayStatus("#infoBox", "Core Performance successful!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude, "null");
 		  recenterMap(latX,lonX, null);//mine, recenter the map if coords are found
       };
 
@@ -247,15 +252,18 @@
 	  //if tryGeolocation() fails
       var browserGeolocationFail = function(error) {
 		  alert('GPS or Location permission is OFF. Turn it on.');  // will fire if GPS is off at cell, if no permission or if Chrome
+		  displayStatus("#infoBox", " GPS or Location permission is OFF. Turn it on.", "red");
+		  
 		  
           switch (error.code) {
               case error.TIMEOUT:
-                  alert("Browser GL error !\n\nTimeout.");
+                  alert("Browser GeoLoc error !\n\nTimeout.");
                   break;
               case error.PERMISSION_DENIED:
                   if(error.message.indexOf("Only secure origins are allowed") == 0) {
                       tryAPIGeolocation();
-					  alert('!SSL permission denied');
+					  //alert('!SSL permission denied'); //IMPORTANT ALERT
+					  displayStatus("#infoBox", "!SSL permission denied", "null");
 					  //infoWindow.setContent("Only secure origins are allowed");
 					  //infoWindow.open(map);
                       
@@ -331,7 +339,8 @@
 			//run my record ajax
 			//if lan if found, i.e match digitals, run this function to get address
 			if (!isNaN(myLat) ){ //if number
-				alert('coord found ' + myLat);
+				//alert('coord found ' + myLat); //IMPORTANT ALERT
+				displayStatus("#infoBox", "coord found " + myLat, "null");
 				if (SslStatus){
 					b = SslStatus;
 					//alert( b + ' Reject detected');
@@ -409,7 +418,8 @@
 			},
 			async: false, // the core Error was here, it was sync and did not wait for value to return
             success: function(data) {
-				alert("ajaxGetAddressbyCoords status is " + data.status);
+				//alert("ajaxGetAddressbyCoords status is " + data.status);  //IMPORTANT ALERT
+				displayStatus("#infoBox", "ajaxGetAddressbyCoords status is " + data.status, "null");
 				if (data.status=="OK"){
 				    //alert(JSON.stringify(data, null, 4));
                     //alert (data.results[1].formatted_address);
@@ -418,10 +428,13 @@
 					} else {
 				        addressX = data.results[1].formatted_address; //get the JSON address
 					}
-					alert('success ' + addressX);
+					//alert('success ' + addressX); //IMPORTANT ALERT
+					displayStatus("#infoBox", "address success " + addressX, "null");
+					
 				} else {
 					addressX = "API Query Limit, n/a(ajaxGetAddressbyCoords)"; 
-					alert('not defined in ajaxGetAddressbyCoords -> API Query Limit');
+					//alert('not defined in ajaxGetAddressbyCoords -> API Query Limit'); //IMPORTANT ALERT
+					displayStatus("#infoBox", " address not defined in ajaxGetAddressbyCoords -> API Query Limit", "red");
 				}
 				
 				
@@ -440,15 +453,37 @@
 	  
 
 	   //END adds from 1st variant---------------------------------------------------
+	   
+	   
+	   
+	   
+	  
+	  
+	  //functions thats shows info of running, instead of alerts
+	  function displayStatus(myDiv, message, cssClass)
+	  {
+		  var data =  $(myDiv).html(); //gets prev messages
+		  var final = data + "<p class='" + cssClass + "'>" + message + "</p>";    //adds a new to prev
+		  $(myDiv).hide().html(final).fadeIn(2000);  
+		  //$(myDiv).stop().fadeOut("slow",function(){ $(this).html(final)}).fadeIn(2000);
+	  }
+	  //END functions thats shows info of running, instead of alerts
 	  
 	  
 	  
-	  
+	  //close infoBox
+	  $(document).ready(function(){
+	  $(document).on("click", '.close-span', function() {  //newly generated, was not working beacuse of this
+		   $("#infoBox").hide(900);
+	 });
+	 });
+	 //close infoBox
 	 
     </script>
 	
 	
-	<!-- Must src from 1st variant, to load googe maps-->
+	
+	<!-- Must src from 1st variant, which loads googe maps-->
     <script async defer
 	src="https://maps.googleapis.com/maps/api/js?callback=initMap">
     //src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
