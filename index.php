@@ -377,6 +377,7 @@
             url: 'ajax_php_script/record_data.php',
             type: 'POST',
 			dataType: 'JSON', // without this it returned string(that can be alerted), now it returns object
+			async: false, //new fix
 			//passing the city
             data: { 
 			    cityLat:x,
@@ -386,12 +387,14 @@
 				
 			},
             success: function(data) {
+				alert("good in myAjaxRequest(x, y)");
                 // do something;
                 //$("#weatherResult").stop().fadeOut("slow",function(){ $(this).html(data) }).fadeIn(2000);
 			    //alert(data.city.name);
 				//getAjaxAnswer(data);
             },  //end success
 			error: function (error) {
+				//alert("Fail in myAjaxRequest(x, y)");
 				//$("#weatherResult").stop().fadeOut("slow",function(){ $(this).html("<h4 style='color:red;padding:3em;'>ERROR!!! <br> NO CITY FOUND</h4>")}).fadeIn(2000);
             }	
         });
@@ -441,7 +444,7 @@
 				
             },  //end success
 			error: function (error) {
-				alert('ajaxError');
+				alert('ajaxError in ajaxGetAddressbyCoords');
             }	
 			
         });
