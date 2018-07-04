@@ -303,6 +303,9 @@
 	   //addon from 1st variant
 	   // function which loads Google maps with specified  coords, using src="https://maps.googleapis.com/maps/api/js?callback=initMap">
 	    /*var*/ map, infoWindow; // made infoWindow global to be seen in function {receneter()}
+	  // *******************************************************************
+      // *******************************************************************
+      //                                                                  ** 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
@@ -324,6 +327,10 @@
    
    
       //mine function in case of success, recenter map to found coords
+	  // **************************************************************************************
+      // **************************************************************************************
+      //                                                                                     ** 
+	  
 	  function recenterMap(myLat, myLon, SslStatus){  //SslStatus arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}, otherwise call with null
 		  //alert(latX);
 		    var pos = { //adding coords to object
@@ -364,10 +371,14 @@
 	 
 	 
 	 
-	 //describe the function myAjaxRequest + ajaxGetAddressbyCoords
+	
 	 
 	 
 	  //sends ajax request to ajax_php_script/record_data.php to record ip, date, lat, lon using RecordTxt::RecordAnyInput(array( "lat: " .$_POST['cityLat'], "lon: ".$_POST['cityLon'], $gmapLink  ),  '../recordText/geolocation.txt');
+	  // **************************************************************************************
+      // **************************************************************************************
+      //                                                                                     ** 
+	  
 	  function myAjaxRequest(x, y) 
 	  {	 
 	     //alert('addr' + addressX);
@@ -376,8 +387,10 @@
         $.ajax({
             url: 'ajax_php_script/record_data.php',
             type: 'POST',
-			dataType: 'JSON', // without this it returned string(that can be alerted), now it returns object
+			dataType: 'text', //changed 'json' to 'text', otherwise it fires  error: function(jqXHR,error, errorThrown)
+			                  //in prev project, added {dataType:'JSON'}-> without this it returned string(that can be alerted), now it returns object
 			async: false, //new fix
+			
 			//passing the city
             data: { 
 			    cityLat:x,
@@ -387,16 +400,22 @@
 				
 			},
             success: function(data) {
-				alert("good in myAjaxRequest(x, y)");
+				//alert("good in myAjaxRequest(x, y)");
                 // do something;
                 //$("#weatherResult").stop().fadeOut("slow",function(){ $(this).html(data) }).fadeIn(2000);
 			    //alert(data.city.name);
 				//getAjaxAnswer(data);
             },  //end success
-			error: function (error) {
-				//alert("Fail in myAjaxRequest(x, y)");
-				//$("#weatherResult").stop().fadeOut("slow",function(){ $(this).html("<h4 style='color:red;padding:3em;'>ERROR!!! <br> NO CITY FOUND</h4>")}).fadeIn(2000);
-            }	
+			
+			error: function(jqXHR,error, errorThrown) {   //error: function (error)
+                if(jqXHR.status&&jqXHR.status==400){
+                    alert("status 400 error" + jqXHR.responseText); 
+                }else{
+                   alert("Fail in myAjaxRequest(x, y)");
+                }
+            }
+	  
+			
         });
 	  }
                                                
@@ -406,8 +425,15 @@
 	  
 	  
 	  
+	  
+	  
+	  
+	  
 	  // gets an address by lat, lon
 	  //----------------------------------------------------------
+	  // **************************************************************************************
+      // **************************************************************************************
+      //                                                                                     ** 
 	 
 	  function ajaxGetAddressbyCoords(myLat1, myLon1, ssl_status){  //ssl_status arg appears if Chrome rejects because of No SSL and fires {tryAPIGeolocation}
 		  var geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + myLat1 + ',' + myLon1;
@@ -460,21 +486,41 @@
 	   
 	   
 	   
+	  var counterb = 1; //counter to encrease delays //used in displayStatus(myDiv, message, cssClass), declare it outside function to keep it static and save value of prev ++
 	  
 	  
-	  //functions thats shows info of running, instead of alerts
+	  //functions thats shows info of running(on black screen), instead of alerts, uses var counterb
+	  // **************************************************************************************
+      // **************************************************************************************
+      //                                                                                     ** 
 	  function displayStatus(myDiv, message, cssClass)
 	  {
-		  var data =  $(myDiv).html(); //gets prev messages
-		  var final = data + "<p class='" + cssClass + "'>" + message + "</p>";    //adds a new to prev
-		  $(myDiv).hide().html(final).fadeIn(2000);  
+		 
+		  counterb++; //counter to encrease delays
+		  var data =  $(myDiv).html(); //gets prev messages //TEMP NOT USED
+		  var final = data + "<p class='" + cssClass + "'>" + message + "</p>";    //adds a new to prev  //TEMP NOT USED
+		  //$(myDiv).hide().html(final).fadeIn(2000);  //disable for makes lines appear one by one with .append
+		  
 		  //$(myDiv).stop().fadeOut("slow",function(){ $(this).html(final)}).fadeIn(2000);
+		  
+		  $(myDiv).hide().fadeIn(2000); //makes div visible
+		  
+		  setTimeout(function(){     //each line appears with delay
+		      $(myDiv).append("<p class='" + cssClass + "'>" + message + "</p>")   		  
+		  }, counterb * 2000); //counterb * 1000 encreases the time for next line to appear
+		  
+		  
 	  }
 	  //END functions thats shows info of running, instead of alerts
 	  
 	  
 	  
+	  
+	  
 	  //close infoBox
+	  // **************************************************************************************
+      // **************************************************************************************
+      //                                                                                     ** 
 	  $(document).ready(function(){
 	  $(document).on("click", '.close-span', function() {  //newly generated, was not working beacuse of this
 		   $("#infoBox").hide(900);
